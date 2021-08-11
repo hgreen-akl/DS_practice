@@ -1,0 +1,61 @@
+---
+title: "Sliced S1_e11 Semi Final - my attempt"
+output: html_notebook
+---
+
+# having a look at texas house prices
+    I think I will try focus on viz with a bit of numerical ML modelling, text might be a bit too tricky for me
+
+```{r}
+library(tidyverse)
+library(tidymodels)
+library(janitor)
+
+```
+
+# column information
+    uid - the unqiue house ID
+    city - all austin/texas except 1 house
+    description - description listing of house (Appears to contain the zipcode which we could try to extract as it appears to be after "TX ")
+    homeType - 10 different options, ranging from SIngle Family, town house, vacant land, multiFamily, mobile, condo etc.
+    latitude
+    longitude
+    garageSpaces - number of car slots in garage, from 0 - 22!!
+    hasSpa - does it have a spa?
+    yearBuilt - 
+    numberOfPatioAndPorchFeatures -
+    lotSizeSqFt - lot size, goes from very small (100 sqft) to massive, 34154525!!
+    avgSchoolRating - 2.33 to 9.5 (Im guessing scale of 1 to 10) average rating of all school types nearby
+    MedianStudentsPerTeacher - ranges from 10 to 19 
+    numOfBathrooms 
+    numOfBedrooms
+    priceRange
+    
+
+```{r}
+train <- read_csv('C:/Users/hgre955/Downloads/sliced_s1_e11_train.csv')
+test <- read_csv('C:/Users/hgre955/Downloads/sliced_s1_e11_test.csv')
+example_sub <- read_csv('C:/Users/hgre955/Downloads/sliced_s1_e11_sample.csv')
+
+
+
+
+```
+#exploring the data set
+
+```{r}
+train %>% filter(lotSizeSqFt > 500000)
+
+
+```
+
+# prepare the data for modelling
+
+```{r}
+
+# The sample submission categorizes this into price brackets from 0-250000, 250000 - 350000, 350000 - 450000,450000 - 650000, 650000 +
+# what sort of model can be used to give probablilites of categorising 
+
+
+```
+
